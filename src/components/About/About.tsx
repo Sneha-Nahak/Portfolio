@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import image from "../../assets/sneha_Frame.png";
+import image from "../../assets/Sneha_Frame.png";
 
 const About: React.FC = () => {
   return (
