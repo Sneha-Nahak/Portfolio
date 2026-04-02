@@ -11,7 +11,6 @@ import {
   SiCss,
   SiJavascript,
   SiRedux,
-  SiExpress,
   SiMongodb,
   SiGithub,
   SiNetlify,
