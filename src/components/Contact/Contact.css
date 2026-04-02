@@ -1,0 +1,154 @@
+/* ── Contact.css ── */
+
+.contact-section {
+  /* Fluid padding for better responsiveness */
+  padding: clamp(60px, 10vh, 100px) clamp(20px, 8vw, 8vw);
+  padding-top: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 8vw, 60px);
+  margin-top: 40px;
+}
+
+@media (min-width: 1024px) {
+  .contact-container {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 100px;
+    align-items: start;
+  }
+}
+
+/* ── Info Side ── */
+.contact-info__heading {
+  font-family: var(--serif);
+  /* Fluid font size for small screens */
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  color: var(--text-bright);
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.contact-info__heading .italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.contact-info__text {
+  font-family: var(--sans);
+  color: var(--text-dim);
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  line-height: 1.7;
+  max-width: 450px;
+  margin-bottom: 40px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--text-bright);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  /* Ensures long email addresses wrap on extra small screens */
+  word-break: break-all;
+}
+
+.contact-item__icon {
+  color: var(--slate);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* ── Form Side ── */
+.contact-form {
+  background: rgba(60, 62, 68, 0.308);
+  backdrop-filter: blur(20px);
+  /* Reduced padding for mobile devices */
+  padding: clamp(25px, 5vw, 40px);
+  border: 1px solid rgba(255, 235, 205, 0.1);
+  /* Responsive box-shadow to prevent overflow */
+  box-shadow: clamp(4px, 1vw, 8px) clamp(4px, 1vw, 8px) 0px rgba(255, 235, 205, 0.05); 
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: clamp(15px, 4vh, 25px);
+}
+
+.form-group label {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--slate);
+}
+
+.form-group input, 
+.form-group textarea {
+  background: rgba(255, 235, 205, 0.03);
+  border: 1px solid rgba(255, 235, 205, 0.1);
+  padding: 15px;
+  color: var(--text-bright);
+  font-family: var(--sans);
+  font-size: 1rem;
+  outline: none;
+  width: 100%; /* Ensures input doesn't exceed form container */
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  border-color: rgba(255, 235, 205, 0.5);
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: clamp(14px, 2vh, 18px);
+  background: transparent;
+  border: 1px solid var(--text-bright);
+  color: var(--text-bright);
+  font-family: var(--sans);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: clamp(0.7rem, 0.8vw, 0.8rem);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: var(--text-bright);
+  color: var(--ink);
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+.error {
+  color: rgba(238, 88, 78, 0.884);
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+  font-size: 0.75rem;
+  font-family: var(--sans);
+  letter-spacing: 0.05em;
+  margin-top: 5px;
+}

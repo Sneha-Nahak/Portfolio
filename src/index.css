@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* Your Requested Palette */
+  --ink: #121212;
+  --slate: #585C6D;
+  --cream: #FFEBCD;
+  
+  /* Semantic Variants */
+  --bg-main: var(--ink);
+  --text-bright: var(--cream);
+  --text-dim: rgba(255, 235, 205, 0.6);
+  --border-subtle: rgba(88, 92, 109, 0.3);
+  
+  --sans: 'Inter', system-ui, sans-serif;
+  --serif: 'Playfair Display', serif;
+
+  --text-base: 1rem;
+  --text-sm: 0.875rem;
+  --text-xs: 0.75rem;
+}
+
+
+body {
+  background-color: var(--ink);
+  background-image: url('./assets/Desktop_2.png');
+  background-size: center; /* Per your center-align request */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+ font-family: var(--font-body);
+  position: relative;
+  min-height: 100vh;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
+}
+
+/* The Smart Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Darkens the background just enough to reduce 'tackiness' */
+   background: linear-gradient(
+    to bottom,
+    rgba(44, 64, 100, 0.4) 0%,
+    rgba(100, 193, 255, 0.582) 100%
+  ); 
+ 
+  z-index: -1;
+  pointer-events: none;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  /* This handles the smooth transition for all internal anchor links */
+  scroll-behavior: smooth;
+}
+
+/* Fix for fixed headers: Ensures sections don't hide under the header */
+section {
+  scroll-margin-top: 80px; /* Adjust this value to match your Header height */
+}
+
+
+/* Custom Scrollbar for Sleekness */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--slate); border-radius: 10px; }
+

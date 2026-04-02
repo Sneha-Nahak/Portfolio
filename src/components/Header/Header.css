@@ -1,0 +1,196 @@
+.header-nav {
+  padding: 16px 20px;
+  width: 100%;
+  background: transparent;
+  transition: all 0.5s ease;
+}
+
+@media (min-width: 768px) {
+  .header-nav {
+    padding: 22px 48px;
+  }
+}
+
+.header-nav--scrolled {
+  padding: 15px 6vw;
+  background: rgba(18, 18, 18, 0.8);
+  box-shadow:
+    rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header-logo {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  text-decoration: none;
+}
+
+.header-link {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.header-link:hover {
+  color: var(--text-bright);
+}
+
+/* Reset <button> to look identical to the <a> links */
+.header-link--resume {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.header-cta {
+  border: 1px solid var(--text-bright);
+  color: var(--text-bright);
+  text-decoration: none;
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.header-cta:hover {
+  background: var(--text-bright);
+  color: var(--ink);
+}
+
+/* ─── Right side wrapper ───────────────────────────────────── */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+/* ─── Desktop links group ──────────────────────────────────── */
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+/* ─── Hamburger — hidden on desktop ───────────────────────── */
+.header-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text-bright);
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .header-nav {
+    justify-content: space-between;
+  }
+
+  /* Hide desktop nav links — they go inside hamburger drawer */
+  .header-links {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .header-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Tighten gap between hamburger and Hire Me */
+  .header-right {
+    gap: 16px;
+  }
+}
+
+/* ─── Mobile overlay ───────────────────────────────────────── */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  animation: overlayFadeIn 0.25s ease forwards;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Mobile menu panel ────────────────────────────────────── */
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(75vw, 300px);
+  background: rgba(18, 18, 18, 0.97);
+  border-left: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 32px;
+  animation: menuSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes menuSlideIn {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+/* ─── Close button ─────────────────────────────────────────── */
+.mobile-menu__close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text-dim);
+  transition: color 0.2s ease;
+  line-height: 1;
+}
+
+.mobile-menu__close:hover {
+  color: var(--text-bright);
+}
+
+/* ─── Menu links ───────────────────────────────────────────── */
+.mobile-menu__links {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.mobile-menu__link {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+
+.mobile-menu__link:hover {
+  color: var(--text-bright);
+}

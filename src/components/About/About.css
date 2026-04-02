@@ -1,0 +1,110 @@
+/* ── About.css ── */
+
+.about-section {
+  padding: clamp(60px, 10vh, 100px) clamp(20px, 8vw, 8vw);
+  padding-top: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the heading row */
+  gap: 50px;
+}
+
+/* ── Row 1: Centered Heading ── */
+.about-main-heading {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--text-bright);
+  text-align: center;
+  line-height: 1.1;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.about-main-heading .italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ── Row 2: Image & Text ── */
+.about-content-row {
+  display: flex;
+  flex-direction: column; /* Stacked for mobile */
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .about-content-row {
+    flex-direction: row; /* Side-by-side for desktop */
+    justify-content: center;
+    align-items: stretch; /* Makes image and text frame equal height */
+    gap: 60px;
+  }
+}
+
+/* ── Image Wrapper ── */
+.about-image-wrapper {
+  flex: 0 0 400px; /* Fixed width on desktop */
+  background: rgba(18, 18, 18, 0.5); /* Matches dark Skill cards */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 235, 205, 0.1);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.about-image-wrapper:hover .about-image {
+  filter: grayscale(0%);
+}
+
+/* ── Text Frame ── */
+.about-text-frame {
+  flex: 1;
+  max-width: 700px;
+}
+
+/* ── Updated Glassmorphism About Paragraph ── */
+
+.about-content__text {
+  font-family: var(--sans);
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  
+ 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border: 2px solid rgba(255, 235, 205, 0.4); 
+  
+  padding: 3rem;
+  max-width: 750px;
+  
+  transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+
+.about-content__text:hover {
+  border-color: rgba(255, 235, 205, 0.6);
+  background: #366C94;
+  box-shadow: 0 0 20px rgba(255, 235, 205, 0.05);
+}
+
+
+@media (max-width: 768px) {
+  .about-content__text {
+    padding: 1.5rem;
+    text-align: center;
+  }
+}

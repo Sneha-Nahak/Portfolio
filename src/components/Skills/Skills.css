@@ -1,0 +1,123 @@
+/* ── Refined Modern Skills.css ── */
+
+.about-skills {
+  padding: clamp(60px, 10vh, 100px) clamp(20px, 8vw, 8vw);
+  padding-top: 2rem;
+}
+
+.section-title {
+  color: #ffebcde8;
+}
+
+.section-header {
+  border-bottom: 1px solid #ffebcd9d !important;
+  padding-bottom: 24px;
+}
+
+/* ── Auto-fill Square Grid ── */
+.skills-container {
+  display: grid !important;
+  /* Each column is at least 130px wide; fills as many as fit */
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
+  gap: 1.8rem !important;
+  margin-top: 40px !important;
+  width: 100%;
+}
+
+/* ── Square Card via aspect-ratio ── */
+.skill-card-mui {
+  background: rgba(18, 18, 18, 0.856) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow:
+    rgba(255, 255, 255, 0.4) 5px 5px,
+    rgba(233, 233, 233, 0.3) 10px 10px,
+    rgba(194, 194, 194, 0.2) 15px 15px,
+    rgba(124, 124, 124, 0.1) 20px 20px,
+    rgba(94, 94, 94, 0.05) 25px 25px !important;
+  border-radius: 0 !important;
+
+  
+  aspect-ratio: 1 / 1;
+  width: 100%;
+
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1) !important;
+  overflow: hidden !important;
+}
+
+.skill-card-mui:hover {
+  background: rgba(255, 235, 205, 0.03) !important;
+  border-color: rgba(255, 235, 205, 0.3) !important;
+  box-shadow:
+    rgba(15, 46, 112, 0.4) 5px 5px,
+    rgba(1, 22, 78, 0.3) 10px 10px,
+    rgba(1, 6, 56, 0.2) 15px 15px,
+    rgba(75, 46, 240, 0.1) 20px 20px,
+    rgba(13, 0, 85, 0.05) 25px 25px !important;
+  transform: translateY(-5px);
+}
+
+/* ── Card Content: centered column ── */
+.skill-card-content {
+  /* Fill the square and center everything */
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0.4rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 10px;
+  box-sizing: border-box !important;
+
+  /* MUI adds padding-bottom:24px on last-child — kill it */
+  padding-bottom: 0 !important;
+}
+
+/* MUI's last-child override */
+.skill-card-content:last-child {
+  padding-bottom: 0 !important;
+}
+
+/* ── Icon ── */
+.skill-icon-wrapper {
+  color: var(--text-bright, #ffebcd);
+  font-size: clamp(1.6rem, 3vw, 2.4rem); /* scales with viewport */
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ── Name ── */
+.skills-grid__name {
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  font-size: clamp(0.7rem, 1.2vw, 1rem) !important;
+  letter-spacing: -0.02em !important;
+  color: #ffebcd !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  margin-top: 0.2rem !important;
+}
+
+/* ── Sub-label ── */
+.skills-grid__sub {
+  font-family: var(--font-body) !important;
+  font-weight: 400 !important;
+  font-size: clamp(0.5rem, 0.8vw, 0.65rem) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.11em !important;
+  color: #ffebcdab !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+  margin-top: 0.2rem !important;
+}
+
+@media (max-width:640px){
+  .skills-container {
+   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+  }
+}
