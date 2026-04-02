@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from "react";
 import Projects from "../Projects/Projects";
 import Skills from "../Skills/Skills";
 import About from "../About/About";
@@ -7,33 +6,10 @@ import "./Main.css";
 import Contact from "../Contact/Contact";
 
 const Main: React.FC = () => {
-  const mainRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!mainRef.current) return;
-
-      const rect = mainRef.current.getBoundingClientRect();
-
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      mainRef.current.style.setProperty("--x", `${x}px`);
-      mainRef.current.style.setProperty("--y", `${y}px`);
-    };
-
-    const node = mainRef.current;
-    node?.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      node?.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-
+  
   return (
-    <main className="main-section" ref={mainRef}>
-      {/* Glow Layer */}
-      <div className="cursor-glow"></div>
+    <main className="main-section" >
+     
 
       {/* Hero Section */}
       <section className="hero">
