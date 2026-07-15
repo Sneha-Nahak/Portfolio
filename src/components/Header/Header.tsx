@@ -54,7 +54,7 @@ const Header: React.FC = () => {
 
           {/* These links are hidden on mobile */}
           <div className="header-links">
-            {["About", "Skills", "Projects"].map((item) => (
+            {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`} className="header-link">
                 {item}
               </a>
@@ -100,7 +100,7 @@ const Header: React.FC = () => {
 
             {/* Nav links */}
             <nav className="mobile-menu__links">
-              {["About", "Skills", "Projects"].map((item) => (
+              {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}

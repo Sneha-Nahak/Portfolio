@@ -12,7 +12,7 @@ const Main: React.FC = () => {
      
 
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" id="home">
         <div className="hero__content">
           <span className="hero__eyebrow">Web Developer & Designer</span>
           <h1 className="hero__heading">

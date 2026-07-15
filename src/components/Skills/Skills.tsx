@@ -96,6 +96,18 @@ const skills = [
   },
 ];
 
+
+const softSkills = [
+  "Problem Solving",
+  "Team Collaboration",
+  "Adaptability",
+  "Communication",
+  "Attention to Detail",
+  "Time Management",
+  "Creative Thinking",
+  "Ownership",
+];
+
 const Skills: React.FC = () => {
   return (
     <section id="skills" className="about-skills">
@@ -103,11 +115,6 @@ const Skills: React.FC = () => {
         <h2 className="section-title">Skills & Expertise</h2>
       </div>
 
-      {/*
-        Plain <div> driven by CSS auto-fill grid.
-        No MUI Grid breakpoints — the grid naturally grows columns
-        from 1 (mobile) up to as many as fit (ultrawide).
-      */}
       <div className="skills-container">
         {skills.map((skill) => (
           <Card key={skill.name} className="skill-card-mui" elevation={0}>
@@ -124,6 +131,18 @@ const Skills: React.FC = () => {
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      {/* Soft Skills — badge style */}
+      <div className="soft-skills-section">
+        <h3 className="soft-skills-title">Soft Skills</h3>
+        <div className="soft-skills-container">
+          {softSkills.map((skill) => (
+            <span key={skill} className="soft-skill-badge">
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

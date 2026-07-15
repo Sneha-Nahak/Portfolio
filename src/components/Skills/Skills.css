@@ -116,8 +116,62 @@
   margin-top: 0.2rem !important;
 }
 
+
+/* ── Soft Skills Section ── */
+.soft-skills-section {
+  margin-top: 3.5rem;
+}
+
+.soft-skills-title {
+  font-family: var(--font-body) !important;
+  font-weight: 600;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: #ffebcde8;
+  margin: 0 0 1.2rem 0;
+  letter-spacing: -0.01em;
+}
+
+.soft-skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ── Badge (rectangular, not square) ── */
+.soft-skill-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.1rem;
+  background: rgba(18, 18, 18, 0.856);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 235, 205, 0.15);
+  border-radius: 4px; /* pill shape — set to 4px if you want sharp rectangles instead */
+
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(0.7rem, 1vw, 0.82rem);
+  letter-spacing: 0.02em;
+  color: #ffebcd;
+
+  transition: all 0.35s cubic-bezier(0.2, 1, 0.3, 1);
+  cursor: default;
+}
+
+.soft-skill-badge:hover {
+  background: rgba(255, 235, 205, 0.05);
+  border-color: rgba(255, 235, 205, 0.4);
+  transform: translateY(-2px);
+}
+
+
 @media (max-width:640px){
   .skills-container {
    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+  }
+
+  .soft-skill-badge {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.72rem;
   }
 }
